@@ -45,7 +45,7 @@ def main():
             time.sleep(1)
             continue
 
-        time.sleep(1.5)
+        time.sleep(1)
         try:
             phrase_el = driver.find_element(By.ID, "flashcard_main_text")
             phrase = phrase_el.text.strip()
@@ -69,7 +69,11 @@ def main():
                 btn.click()
                 print("Clicked next page button")
             except:
-                print("Error:", e)
+                if '[id="flashcard_main_text"]' in str(e):
+                    print("Error:", e)
+                    break
+                else:
+                    print("Error:", e)
 
 if __name__ == "__main__":
     main()
