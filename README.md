@@ -36,8 +36,14 @@ pip install selenium keyboard
 
 1.  **Install Dependencies:** Make sure you have Python and Google Chrome installed. Then, install the required Python packages as shown above.
 2.  **ChromeDriver:** Download the appropriate version of ChromeDriver for your operating system and Chrome version from the [official site](https://chromedriver.chromium.org/downloads). Place the `chromedriver.exe` (or equivalent for your OS) in the same directory as the script, or in a directory included in your system's PATH.
-3.  **Vocabulary File:** Populate the `vocab.txt` file with your vocabulary, it can be copied entirely by selecting the text on the `zestawy` page. The format is one word or phrase per line, with the English and Polish translations on alternating lines. For example:
+3.  **Login Credentials:** Create a `login.txt` file in the same directory as the script. The first line should contain your email, and the second line should contain your password. For example:
 
+    ```
+    your_email@example.com
+    your_password
+    ```
+
+4.  **Vocabulary File:** Populate the `vocab.txt` file with your vocabulary, it can be copied entirely by selecting the text on the `zestawy` page. The format is one word or phrase per line, with the English and Polish translations on alternating lines. For example:
     ```
     Hello
     Cześć
@@ -61,8 +67,9 @@ pip install selenium keyboard
 ## File Descriptions
 
 -   `main.py`: The main Python script that runs the automation.
+-   `login.txt`: A text file containing your login credentials (email and password).
 -   `vocab.txt`: A plain text file containing the vocabulary used by the script. Each line should contain a word or phrase, with translations on subsequent lines.
--   `README`: This file, providing information about the project.
+-   `README.md`: This file, providing information about the project.
 
 ## Disclaimer
 

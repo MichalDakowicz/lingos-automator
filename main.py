@@ -22,8 +22,24 @@ def main():
     driver = webdriver.Chrome()
     driver.maximize_window()
     driver.get("https://lingos.pl/student-confirmed/group")
+    time.sleep(1)
+    
+    with open("login.txt", encoding="utf-8") as f:
+        login = f.readline().strip()
+        password = f.readline().strip()
+    
+    driver.find_element(By.ID, "CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll").click()
 
-    print("👉 Log in manually and go to the flashcards page.")
+    input_el = driver.find_element(By.NAME, "login")
+    input_el.clear()
+    input_el.send_keys(login)
+
+    input_el = driver.find_element(By.NAME, "password")
+    input_el.clear()
+    input_el.send_keys(password)
+    
+    driver.find_element(By.ID, "submit-login-button").click()
+
     print("👉 Press F8 to start, F9 to pause/resume, F10 to quit.")
 
     keyboard.wait("F8")
