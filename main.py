@@ -39,10 +39,15 @@ def main():
     input_el.send_keys(password)
     
     driver.find_element(By.ID, "submit-login-button").click()
+    
+    time.sleep(1)
+    
+    buttons = driver.find_elements(By.TAG_NAME, "a")
+    for btn in buttons:
+        if "UCZ SIĘ" in btn.text:
+            btn.click()
+            break
 
-    print("👉 Press F8 to start, F9 to pause/resume, F10 to quit.")
-
-    keyboard.wait("F8")
     print("🚀 Automation started!")
 
     paused = False
